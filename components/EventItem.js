@@ -5,7 +5,7 @@ import styles from "@/styles/EventItem.module.css";
 export default function EventItem({ event, key }) {
   return (
     <div className={styles.event} key={key}>
-      <div className={styles.image}>
+      <div className={styles.image} key={key}>
         <Image
           src={event.image ? event.image : "/images/event-default.png"}
           width="170"
