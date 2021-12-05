@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import qs from "qs";
 import EventItem from "@/components/EventItem";
-import Layout from "@/components/layout";
+import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 
 export default function SearchPage({ events }) {

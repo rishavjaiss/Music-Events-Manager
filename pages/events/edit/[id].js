@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 import { API_URL } from "@/config/index";
-import Layout from "@/components/layout";
+import Layout from "@/components/Layout";
 import Modal from "@/components/Modal";
 import ImageUpload from "@/components/ImageUpload";
 import styles from "@/styles/Form.module.css";

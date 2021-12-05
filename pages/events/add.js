@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { API_URL } from "@/config/index";
-import Layout from "@/components/layout";
+import Layout from "@/components/Layout";
 import styles from "@/styles/Form.module.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

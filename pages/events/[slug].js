@@ -1,4 +1,4 @@
-import Layout from "@/components/layout";
+import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import styles from "@/styles/Event.module.css";
 import Link from "next/link";
