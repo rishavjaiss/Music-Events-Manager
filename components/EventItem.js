@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/EventItem.module.css";
+import styles from "@/styles/eventItem.module.css";
 
 export default function EventItem({ event, key }) {
   return (

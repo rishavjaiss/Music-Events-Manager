@@ -1,7 +1,7 @@
 import React from "react";
 import { API_URL } from "@/config/index";
 import { useState } from "react";
-import styles from "../styles/Form.module.css";
+import styles from "@/styles/form.module.css";
 
 export default function ImageUpload({ token, eventId, imageUploaded }) {
   const [image, setImage] = useState(null);

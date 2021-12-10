@@ -5,7 +5,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "@/context/AuthContext";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "@/components/Layout";
-import styles from "@/styles/AuthForm.module.css";
+import styles from "@/styles/authForm.module.css";
 
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
