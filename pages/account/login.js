@@ -5,7 +5,7 @@ import { AuthContext } from "@/context/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "@/components/Layout";
-import styles from "@/styles/AuthForm.module.css";
+import styles from "../../styles/AuthForm.module.css";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");

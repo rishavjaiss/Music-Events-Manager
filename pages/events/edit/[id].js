@@ -6,7 +6,7 @@ import { API_URL } from "@/config/index";
 import Layout from "@/components/Layout";
 import Modal from "@/components/Modal";
 import ImageUpload from "@/components/ImageUpload";
-import styles from "@/styles/Form.module.css";
+import styles from "../../../styles/Form.module.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";

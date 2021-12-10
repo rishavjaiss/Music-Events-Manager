@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { FaPencilAlt, FaTimes } from "react-icons/fa";
-import styles from "@/styles/DashboardEvent.module.css";
+import styles from "../styles/DashboardEvent.module.css";
 
 export default function DashboardEvent({ event, handleDelete }) {
   return (
