@@ -11,8 +11,9 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import { FaImage } from "react-icons/fa";
+import { parseCookies } from "@/helpers/index";
 
-export default function EditEventPage({ event }) {
+export default function EditEventPage({ event, token }) {
   const [values, setValues] = useState({
     name: event.name,
     performers: event.performers,
@@ -40,11 +41,18 @@ export default function EditEventPage({ event }) {
 
     const res = await fetch(`${API_URL}/events/${event.id}`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(values),
     });
 
     if (!res.ok) {
+      if (res.status === 403 || 401) {
+        toast.error("Unauthorized");
+        return;
+      }
       toast.error("Something went wrong.");
     } else {
       const evt = await res.json();
@@ -159,15 +167,19 @@ export default function EditEventPage({ event }) {
       </div>
 
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <ImageUpload eventId={event.id} imageUploaded={imageUploaded} />
+        <ImageUpload
+          token={token}
+          eventId={event.id}
+          imageUploaded={imageUploaded}
+        />
       </Modal>
     </Layout>
   );
 }
 
-export async function getServerSideProps({ params: { id } }) {
+export async function getServerSideProps({ req, params: { id } }) {
+  const { token } = parseCookies(req);
   const res = await fetch(`${API_URL}/events/${id}`);
   const event = await res.json();
-
-  return { props: { event } };
+  return { props: { event, token } };
 }

@@ -29,7 +29,6 @@ export default function AuthProvider({ children }) {
       router.push("/account/dashboard");
     } else {
       setError(data.message);
-      setError(null);
     }
   };
 
@@ -52,7 +51,6 @@ export default function AuthProvider({ children }) {
       router.push("/account/dashboard");
     } else {
       setError(data.message);
-      setError(null);
     }
   };
 
@@ -61,15 +59,18 @@ export default function AuthProvider({ children }) {
     const data = res.json();
     if (res.ok) {
       setUser(null);
+      setError(null);
       router.push("/");
     }
   };
 
   const checkUserLoggedIn = async () => {
     const res = await fetch(`${NEXT_URL}/api/user`);
-    const data = res.json();
+    const data = await res.json();
     if (res.ok) {
       setUser(data.user);
+    } else {
+      setUser(null);
     }
   };
 
