@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import React from "react";
 import { parseCookies } from "@/helpers/index";
 import { API_URL } from "@/config/index";
-import styles from "@/styles/dashboard.module.css";
+import styles from "@/styles/Dashboard.module.css";
 import DashboardEvent from "@/components/DashboardEvent";
 import { useRouter } from "next/router";
 import "react-toastify/dist/ReactToastify.css";
